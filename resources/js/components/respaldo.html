@@ -1,0 +1,50 @@
+<div class="col-md-12" v-show="formulario == 1">
+    <form class="form" id="contact-form" onSubmit="return false">
+        <div class="form-body">
+            <div class="form-group row">
+                <label for="" class="col-md-2 col-form-label text-left">Run </label>
+                <div class="col-md-4">
+                    <input type="text" v-rut v-model="run[0]" required class="form-control">
+                </div>
+
+                <label for="" class="col-md-2 col-form-label text-left">Nombre </label>
+                <div class="col-md-4">
+                    <input type="text" v-model="nombre[0]" required class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-md-2 col-form-label text-left">Talla Polera </label>
+                <div class="col-md-4">
+                    <select class="form-control" v-model="polera_id[0]" required>
+                        <option value="">Seleccione ...</option>
+                        <option v-for="polera in arrayPoleras" :key="polera.id" :value="polera.id" v-text="polera.talla"></option>
+                    </select>
+                </div>
+
+                <label for="" class="col-md-2 col-form-label text-left">Email </label>
+                <div class="col-md-4">
+                    <input type="email" v-model="email" required class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-md-2 col-form-label text-left">Box </label>
+                <div class="col-md-10">
+                    <input type="text" v-model="box" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row" v-show="categoria_id == 5">
+                <label for="" class="col-md-2 col-form-label text-left">Fecha de nacimiento </label>
+                <div class="col-md-10">
+                    <input type="date" v-model="fecha_nacimiento" required class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="form-group">
+                    <button @click="registrarse()" class="btn btn-block btn-success btn_common text-right">Registrarse</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
