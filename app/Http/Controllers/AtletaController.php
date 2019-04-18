@@ -254,7 +254,7 @@ class AtletaController extends Controller
                 $atletaTres = new Atleta();
                 $atletaTres->run = $request->run[2];
                 $atletaTres->nombre = $request->nombre[2];
-                $atletaTres->nombre_equipo = $request->nombre_equipo;
+                $atletaTres->nombre_equipo = $request->nombre_equipo; 
                 $atletaTres->polera_id = $request->polera_id[2];
                 $atletaTres->categoria_id = $request->categoria_id;
                 $atletaTres->save();
@@ -296,14 +296,13 @@ class AtletaController extends Controller
         try{
             DB::beginTransaction();
 
-
-
             $atleta = new Atleta();
             $atleta->run = $request->run;
             $atleta->nombre = $request->nombre;
             $atleta->correo = $request->correo;
             $atleta->polera_id = $request->polera_id;
             $atleta->categoria_id = $request->categoria_id;
+            $atleta->box = $request->box;
             $atleta->pago = 1;
             $atleta->invitado = 1;
             $atleta->save();
@@ -329,6 +328,7 @@ class AtletaController extends Controller
             $atleta->polera_id = $request->polera_id;
             $atleta->categoria_id = $request->categoria_id;
             $atleta->invitado = 1;
+            $atleta->box = $request->box;
             $atleta->save();
 
             DB::commit();

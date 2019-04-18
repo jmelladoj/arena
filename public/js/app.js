@@ -4781,6 +4781,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -4804,6 +4812,7 @@ var items = [{
       correo: '',
       categoria_id: 0,
       polera_id: 0,
+      box: '',
       arrayAtleta: [],
       arrayPoleras: [],
       arrayCategoria: [],
@@ -4943,7 +4952,8 @@ var items = [{
         'nombre': this.nombre,
         'correo': this.correo,
         'categoria_id': this.categoria_id,
-        'polera_id': this.polera_id
+        'polera_id': this.polera_id,
+        'box': this.box
       }).then(function (response) {
         me.cerrarModal();
         me.listarAtleta();
@@ -4966,6 +4976,7 @@ var items = [{
         'correo': this.correo,
         'categoria_id': this.categoria_id,
         'polera_id': this.polera_id,
+        'box': this.box,
         'id': this.atleta_id
       }).then(function (response) {
         me.cerrarModal();
@@ -5052,6 +5063,7 @@ var items = [{
                   this.run = '';
                   this.nombre = '';
                   this.correo = '';
+                  this.box = '';
                   this.polera_id = 0;
                   this.categoria_id = 0;
                   this.tipoAccion = 1;
@@ -5069,6 +5081,7 @@ var items = [{
                   this.correo = data['correo'];
                   this.polera_id = data['polera_id'];
                   this.categoria_id = data['categoria_id'];
+                  this.box = data['box'];
                   break;
                 }
             }
@@ -70195,6 +70208,38 @@ var render = function() {
                           }),
                           0
                         )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group row" }, [
+                      _c("div", { staticClass: "col-md-12" }, [
+                        _c("div", { staticClass: "form-group m-b-20" }, [
+                          _c("label", { attrs: { for: "input6" } }, [
+                            _vm._v("Box")
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.box,
+                                expression: "box"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: { type: "text" },
+                            domProps: { value: _vm.box },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.box = $event.target.value
+                              }
+                            }
+                          })
+                        ])
                       ])
                     ])
                   ])
